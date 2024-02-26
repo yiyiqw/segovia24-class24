@@ -87,6 +87,23 @@ print("Modified List:", my_list)
 # Original List: [1, 2, 3]
 # Modified List: [10, 2, 3]
 
+# Define a list of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Modify the second element
+numbers[1] = 20  # This changes the second element from 2 to 20
+
+# Add a new element
+numbers.append(6)  # This adds a new element to the end of the list
+
+# Remove an element
+numbers.remove(3)  # This removes the number 3 from the list
+
+# After the above operations, the list has been changed:
+print(numbers)  # Output: [1, 20, 4, 5, 6]
+
+# from this we can see how lists can be changed, which shows they are mutable
+
 # Strings are immutable
 my_string = "hello"
 print("Original String:", my_string)
@@ -99,6 +116,23 @@ except TypeError as e:
 
 # Original String: hello
 # Error: 'str' object does not support item assignment
+
+# Define a string
+greeting = "Hello, world!"
+
+# Try to change the first character
+try:
+    greeting[0] = "J"  # This will raise an error, as strings are immutable
+except TypeError as e:
+    print(e)  # Output: 'str' object does not support item assignment
+
+# To change the string, you have to create a new one
+greeting = "J" + greeting[1:]
+
+# Now greeting is a new string object:
+print(greeting)  # Output: "Jello, world!"
+
+
 
 # question 7
 import random
