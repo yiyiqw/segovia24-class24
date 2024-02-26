@@ -208,5 +208,34 @@ def days_since_birthday():
 
     return total_days
 
-
 print(days_since_birthday())
+
+
+def days_since_birthday(birthday):
+    # Split the birthday string into day, month, and year
+    day, month, year = map(int, birthday.split('-'))
+
+    # Get the current year (we'll use a placeholder since we're not importing anything)
+    # In practice, you would get the current year dynamically
+    current_year = 2024  # Placeholder for the current year
+
+    # Calculate the number of full years since the birth year
+    full_years = current_year - year - 1
+
+    # Initialize the count of leap years
+    leap_years = 0
+
+    # Count how many leap years in the range from the year after the birth year to last year
+    for y in range(year + 1, current_year):
+        if (y % 4 == 0 and y % 100 != 0) or (y % 400 == 0):
+            leap_years += 1
+
+    # Calculate the number of days: leap years have 366 days, others have 365
+    total_days = leap_years * 366 + (full_years - leap_years) * 365
+
+    return total_days
+
+
+# Example usage
+birthday = "01-01-2000"
+print(days_since_birthday(birthday))
