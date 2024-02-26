@@ -9,6 +9,21 @@ print(2*3+5*6)
 print(3+10**2/2)
 
 # Question 3
+from urllib.parse import urlparse
+
+def is_valid_url(url):
+    try:
+        result = urlparse(url)
+        return all([result.scheme, result.netloc])  # Check if both scheme and netloc are present
+    except ValueError:
+        return False  # If there's a ValueError, the URL is not valid
+
+# Example usage:
+s = "http://google.com"
+urls = s.split()
+
+for url in urls:
+    print(f"{url}: {is_valid_url(url)}")
 
 # Question 4
 import random
