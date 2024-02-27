@@ -237,5 +237,5 @@ def days_since_birthday(birthday):
 
 
 # Example usage
-birthday = "01-01-2000"
+birthday = "01-01-2003"
 print(days_since_birthday(birthday))
